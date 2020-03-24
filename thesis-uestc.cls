@@ -353,16 +353,18 @@
 
 \newcommand{\thestudentnumber}{\chinesespace}
 
-\newcommand{\maintitle}[2]{ %封面上的论文题目，用于调整较长的论文题目换行位置
+\newcommand{\maintitle}[2]{         %封面上的论文题目，用于调整较长的论文题目换行位置
   \newcommand{\zh@themaintitle}{#1}
   \newcommand{\en@themaintitle}{#2}
 }
 
-\newcommand{\EngineeringFieldName}[2]{%工程领域
+\newcommand{\EngineeringFieldName}[2]{          %工程领域
   \newcommand{\zh@theEngineeringFieldName}{#1}
   \newcommand{\en@theEngineeringFieldName}{#2}
 }
-
+\newcommand{\degree}[1]{          %学位
+  \newcommand{\thedegree}{#1}
+}
 \renewcommand{\title}[2]{
   \renewcommand{\zh@thetitle}{#1}
   \renewcommand{\en@thetitle}{#2}
@@ -410,7 +412,7 @@
 }
 
 \DeclareOption{bachelor}{
-  \def\chinesedegreename{本科}
+  \def\chinesedegreename{\thedegree}
   \def\englishdegreename{Bachelor}
   \def\chinesebooktitle{学士学位论文}
   \def\englishbooktitle{Bachelor Thesis}
@@ -425,7 +427,7 @@
 }
 
 \DeclareOption{master}{
-  \def\chinesedegreename{硕士}
+  \def\chinesedegreename{\thedegree}
   \def\englishdegreename{Master}
   \def\chinesebooktitle{硕士学位论文}
   \def\englishbooktitle{Master Thesis}
@@ -437,7 +439,7 @@
 }
 
 \DeclareOption{promaster}{
-  \def\chinesedegreename{专业硕士}
+  \def\chinesedegreename{\thedegree}
   \def\englishdegreename{Professional Master}
   \def\chinesebooktitle{专业学位硕士学位论文}
   \def\englishbooktitle{Master Thesis for Professional Degree}
@@ -456,7 +458,7 @@
 }
 
 \DeclareOption{doctor}{
-  \def\chinesedegreename{博士}
+  \def\chinesedegreename{\thedegree}
   \def\englishdegreename{Doctor}
   \def\chinesebooktitle{博士学位论文}
   \def\englishbooktitle{Doctoral Dissertation}
@@ -468,7 +470,7 @@
 }
 
 \DeclareOption{engdoctor}{
-  \def\chinesedegreename{工程博士}
+  \def\chinesedegreename{\thedegree}
   \def\englishdegreename{Engineering Doctor}
   \def\chinesebooktitle{工程博士学位论文}
   \def\englishbooktitle{Engineering Doctoral Dissertation}
