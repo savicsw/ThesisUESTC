@@ -342,6 +342,7 @@
 \newcommand{\zh@themajor}{\chinesespace}
 \newcommand{\zh@theadvisor}{\chinesespace}
 
+
 \newcommand{\en@thetitle}{\chinesespace}
 \newcommand{\en@theauthor}{\chinesespace}
 \newcommand{\en@thedate}{\chinesespace}
@@ -349,7 +350,18 @@
 \newcommand{\en@themajor}{\chinesespace}
 \newcommand{\en@theadvisor}{\chinesespace}
 
+
 \newcommand{\thestudentnumber}{\chinesespace}
+
+\newcommand{\maintitle}[2]{ %封面上的论文题目，用于调整较长的论文题目换行位置
+  \newcommand{\zh@themaintitle}{#1}
+  \newcommand{\en@themaintitle}{#2}
+}
+
+\newcommand{\EngineeringFieldName}[2]{%工程领域
+  \newcommand{\zh@theEngineeringFieldName}{#1}
+  \newcommand{\en@theEngineeringFieldName}{#2}
+}
 
 \renewcommand{\title}[2]{
   \renewcommand{\zh@thetitle}{#1}
@@ -404,6 +416,8 @@
   \def\englishbooktitle{Bachelor Thesis}
   \def\display@englishheader{Bachelor Thesis of University of
     Electronic Science and Technology of China}
+  \def\majortitle{学科专业}
+  \def\TitlePageSpace{0.54in}
 }
 
 \newcommand{\ifbachelor}[2]{
@@ -417,6 +431,9 @@
   \def\englishbooktitle{Master Thesis}
   \def\display@englishheader{Master Thesis of University of
     Electronic Science and Technology of China}
+  \def\majortitle{学科专业}
+  \def\TitlePageSpace{0.54in}
+  \def\inserttheEngineeringFieldName{}
 }
 
 \DeclareOption{promaster}{
@@ -426,6 +443,16 @@
   \def\englishbooktitle{Master Thesis for Professional Degree}
   \def\display@englishheader{Professional Master Thesis of University 
     of Electronic Science and Technology of China}
+  \def\majortitle{专业学位类别}
+  \def\TitlePageSpace{0.34in}
+  \def\inserttheEngineeringFieldName{
+  \begin{tabular}{>{\fontsize{12pt}{12pt}\selectfont}l
+      >{\centering\arraybackslash\fontsize{16pt}{16pt}\heiti\selectfont}
+      p{4.26in}}
+      工程领域名称 & \zh@theEngineeringFieldName\\
+    \cline{2-2}
+  \end{tabular} \\
+  }
 }
 
 \DeclareOption{doctor}{
@@ -435,6 +462,9 @@
   \def\englishbooktitle{Doctoral Dissertation}
   \def\display@englishheader{Doctoral Dissertation of University of
     Electronic Science and Technology of China}
+  \def\majortitle{学科专业}
+  \def\TitlePageSpace{0.54in}
+  \def\inserttheEngineeringFieldName{}
 }
 
 \DeclareOption{engdoctor}{
@@ -444,6 +474,16 @@
   \def\englishbooktitle{Engineering Doctoral Dissertation}
   \def\display@englishheader{Engineering Doctoral Dissertation of
     University of Electronic Science and Technology of China}
+  \def\majortitle{专业学位类别}
+  \def\TitlePageSpace{0.34in}
+  \def\inserttheEngineeringFieldName{
+  \begin{tabular}{>{\fontsize{12pt}{12pt}\selectfont}l
+      >{\centering\arraybackslash\fontsize{16pt}{16pt}\heiti\selectfont}
+      p{4.26in}}
+      工程领域名称 & \zh@theEngineeringFieldName\\
+    \cline{2-2}
+  \end{tabular} \\
+  }
 }
 
 \ExecuteOptions{master}
@@ -590,7 +630,7 @@
     \heiti\fontsize{16pt}{16pt}\selectfont 论文题目 & \multirow[t]{2}{4.6in}{
         \centering
           \heiti\fontsize{16pt}{19pt}\selectfont
-          \zh@thetitle
+          \zh@themaintitle
     } & \\
     \cline{2-2}
             & \\
@@ -599,7 +639,7 @@
   \begin{tabular}{>{\heiti\fontsize{16pt}{16pt}\selectfont}l
       >{\centering\arraybackslash\heiti\fontsize{16pt}{16pt}\selectfont}
       p{3.77in}p{20pt}}
-    学科专业 & \zh@themajor &\\
+    \majortitle & \zh@themajor &\\
     \cline{2-2}
     学\chinesespace\chinesespace 号 & \thestudentnumber & \\
     \cline{2-2}
@@ -658,10 +698,11 @@ UDC\textsuperscript{ 注1} \uline{\hspace{2.5in}} \\[12bp]
       >{\centering\arraybackslash\fontsize{16pt}{16pt}\heiti\selectfont}
       p{2.48in}}
       申请学位级别 & \chinesedegreename &
-      学科专业 & \zh@themajor \\
+      \majortitle & \zh@themajor \\
     \cline{2-2}
     \cline{4-4}
   \end{tabular} \\
+  \inserttheEngineeringFieldName
   \begin{tabular}{>{\fontsize{12pt}{12pt}\selectfont}l
       >{\centering\arraybackslash\fontsize{16pt}{16pt}\heiti\selectfont}
       p{1.0in}
@@ -692,7 +733,7 @@ UDC\textsuperscript{ 注1} \uline{\hspace{2.5in}} \\[12bp]
     \cline{2-2}
   \end{tabular}
 
-\vspace{0.54in}
+\vspace{\TitlePageSpace}
 \noindent
 \hspace{12pt}注1：注明《国际十进分类法UDC》的类号。
 
