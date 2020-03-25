@@ -10,7 +10,7 @@
 2.针对专硕和学硕论文的不同之处，在采用[promaster]选项编译时，修改“学科专业”->“专业学位类别”，增加了扉页的“工程领域名称”项
 
 ```bash
-\EngineeringFieldName{测试工程领域名称}{Test Engineering Field Name}
+\theEngineeringFieldName{测试工程领域名称}{Test Engineering Field Name}
 ```
 
 3.考虑到专硕扉页和之前有所不同，因此扉页中的相关字段可以直接在main.tex中自定义
@@ -19,6 +19,8 @@
 \degree{硕士}     // 申请学位级别
 \major{无线电物理}{Radio Physics}    %该字段 学硕对应学科专业   专硕对应专业学位类别
 ```
+
+4.兼容旧模板的subfigure命令插入子图，subfigure命令被自动替换为新版的subfloat
 
 
 # ThesisUESTC-电子科技大学毕业论文模板
