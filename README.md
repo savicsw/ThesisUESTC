@@ -10,7 +10,7 @@
 2.针对专硕和学硕论文的不同之处，在采用[promaster]选项编译时，修改“学科专业”->“专业学位类别”，增加了扉页的“工程领域名称”项
 
 ```bash
-\EngineeringFieldName{测试工程领域名称}{Test Engineering Field Name}
+\theEngineeringFieldName{测试工程领域名称}{Test Engineering Field Name}
 ```
 
 3.考虑到专硕扉页和之前有所不同，因此扉页中的相关字段可以直接在main.tex中自定义
