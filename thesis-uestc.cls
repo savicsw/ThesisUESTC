@@ -124,6 +124,8 @@
   \listoftables
 }
 
+\newcommand{\subfigure}{\subfloat}
+
 \RequirePackage[a4paper,
   inner=3cm, outer=3cm, top=3cm, bottom=3cm,
   bindingoffset=0cm]{geometry}
