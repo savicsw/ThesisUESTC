@@ -342,7 +342,6 @@
 \newcommand{\zh@themajor}{\chinesespace}
 \newcommand{\zh@theadvisor}{\chinesespace}
 
-
 \newcommand{\en@thetitle}{\chinesespace}
 \newcommand{\en@theauthor}{\chinesespace}
 \newcommand{\en@thedate}{\chinesespace}
@@ -350,21 +349,20 @@
 \newcommand{\en@themajor}{\chinesespace}
 \newcommand{\en@theadvisor}{\chinesespace}
 
-
 \newcommand{\thestudentnumber}{\chinesespace}
 
 \newcommand{\maintitle}[2]{         %封面上的论文题目，用于调整较长的论文题目换行位置
   \newcommand{\zh@themaintitle}{#1}
   \newcommand{\en@themaintitle}{#2}
 }
-
-\newcommand{\EngineeringFieldName}[2]{          %工程领域
+\newcommand{\theEngineeringFieldName}[2]{          %工程领域
   \newcommand{\zh@theEngineeringFieldName}{#1}
   \newcommand{\en@theEngineeringFieldName}{#2}
 }
 \newcommand{\degree}[1]{          %学位
   \newcommand{\thedegree}{#1}
 }
+
 \renewcommand{\title}[2]{
   \renewcommand{\zh@thetitle}{#1}
   \renewcommand{\en@thetitle}{#2}
@@ -412,7 +410,7 @@
 }
 
 \DeclareOption{bachelor}{
-  \def\chinesedegreename{\thedegree}
+  \def\chinesedegreename{学士}
   \def\englishdegreename{Bachelor}
   \def\chinesebooktitle{学士学位论文}
   \def\englishbooktitle{Bachelor Thesis}
@@ -420,6 +418,8 @@
     Electronic Science and Technology of China}
   \def\majortitle{学科专业}
   \def\TitlePageSpace{0.54in}
+  \def\inserttheEngineeringFieldName{}
+  \def\majorPitch{2.48in}
 }
 
 \newcommand{\ifbachelor}[2]{
@@ -427,7 +427,7 @@
 }
 
 \DeclareOption{master}{
-  \def\chinesedegreename{\thedegree}
+  \def\chinesedegreename{硕士}
   \def\englishdegreename{Master}
   \def\chinesebooktitle{硕士学位论文}
   \def\englishbooktitle{Master Thesis}
@@ -436,10 +436,11 @@
   \def\majortitle{学科专业}
   \def\TitlePageSpace{0.54in}
   \def\inserttheEngineeringFieldName{}
+  \def\majorPitch{2.48in}
 }
 
 \DeclareOption{promaster}{
-  \def\chinesedegreename{\thedegree}
+  \def\chinesedegreename{专业硕士}
   \def\englishdegreename{Professional Master}
   \def\chinesebooktitle{专业学位硕士学位论文}
   \def\englishbooktitle{Master Thesis for Professional Degree}
@@ -453,12 +454,12 @@
       p{4.26in}}
       工程领域名称 & \zh@theEngineeringFieldName\\
     \cline{2-2}
-  \end{tabular} \\
-  }
+  \end{tabular} \\}
+  \def\majorPitch{2.0in}
 }
 
 \DeclareOption{doctor}{
-  \def\chinesedegreename{\thedegree}
+  \def\chinesedegreename{博士}
   \def\englishdegreename{Doctor}
   \def\chinesebooktitle{博士学位论文}
   \def\englishbooktitle{Doctoral Dissertation}
@@ -467,10 +468,11 @@
   \def\majortitle{学科专业}
   \def\TitlePageSpace{0.54in}
   \def\inserttheEngineeringFieldName{}
+  \def\majorPitch{2.48in}
 }
 
 \DeclareOption{engdoctor}{
-  \def\chinesedegreename{\thedegree}
+  \def\chinesedegreename{工程博士}
   \def\englishdegreename{Engineering Doctor}
   \def\chinesebooktitle{工程博士学位论文}
   \def\englishbooktitle{Engineering Doctoral Dissertation}
@@ -484,8 +486,8 @@
       p{4.26in}}
       工程领域名称 & \zh@theEngineeringFieldName\\
     \cline{2-2}
-  \end{tabular} \\
-  }
+  \end{tabular} \\}
+  \def\majorPitch{2.0in}
 }
 
 \ExecuteOptions{master}
@@ -698,8 +700,8 @@ UDC\textsuperscript{ 注1} \uline{\hspace{2.5in}} \\[12bp]
       p{1.0in}
       >{\fontsize{12pt}{12pt}\selectfont}l
       >{\centering\arraybackslash\fontsize{16pt}{16pt}\heiti\selectfont}
-      p{2.48in}}
-      申请学位级别 & \chinesedegreename &
+      p{\majorPitch}}
+      申请学位级别 & \thedegree &
       \majortitle & \zh@themajor \\
     \cline{2-2}
     \cline{4-4}
@@ -718,7 +720,7 @@ UDC\textsuperscript{ 注1} \uline{\hspace{2.5in}} \\[12bp]
   \end{tabular} \\
   \begin{tabular}{>{\fontsize{12pt}{12pt}\selectfont}l
       >{\centering\arraybackslash\fontsize{16pt}{16pt}\heiti\selectfont}
-      p{3.97in}}
+      p{3.83in}}
       学位授予单位和日期 & 电子科技大学\chinesespace 年\chinesespace 月 \\
     \cline{2-2}
   \end{tabular} \\
@@ -730,7 +732,7 @@ UDC\textsuperscript{ 注1} \uline{\hspace{2.5in}} \\[12bp]
   \end{tabular} \\
   \begin{tabular}{>{\fontsize{12pt}{12pt}\selectfont}l
       >{\centering\arraybackslash\fontsize{16pt}{16pt}\heiti\selectfont}
-      p{4.89in}}
+      p{4.85in}}
       评阅人 & \\
     \cline{2-2}
   \end{tabular}
