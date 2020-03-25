@@ -20,6 +20,8 @@
 \major{无线电物理}{Radio Physics}    %该字段 学硕对应学科专业   专硕对应专业学位类别
 ```
 
+4.兼容旧模板的subfigure命令插入子图，subfigure命令被自动替换为新版的subfloat
+
 
 # ThesisUESTC-电子科技大学毕业论文模板
 [![](https://img.shields.io/badge/license-LPPL-blue)](https://www.latex-project.org/lppl/)
