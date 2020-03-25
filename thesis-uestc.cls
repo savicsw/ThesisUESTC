@@ -422,6 +422,9 @@
   \def\TitlePageSpace{0.54in}
   \def\inserttheEngineeringFieldName{}
   \def\majorPitch{2.48in}
+  \def\authortitle{作者姓名}
+  \def\teachertitle{指导老师}
+  \def\studentnumbertitle{学\chinesespace\chinesespace 号}
 }
 
 \newcommand{\ifbachelor}[2]{
@@ -439,6 +442,9 @@
   \def\TitlePageSpace{0.54in}
   \def\inserttheEngineeringFieldName{}
   \def\majorPitch{2.48in}
+  \def\authortitle{作者姓名}
+  \def\teachertitle{指导老师}
+  \def\studentnumbertitle{学\chinesespace\chinesespace 号}
 }
 
 \DeclareOption{promaster}{
@@ -458,6 +464,9 @@
     \cline{2-2}
   \end{tabular} \\}
   \def\majorPitch{2.0in}
+  \def\authortitle{作\hskip 0.66em 者\hskip 0.66em 姓\hskip 0.66em 名}
+  \def\teachertitle{指\hskip 0.66em 导\hskip 0.66em 老\hskip 0.66em 师}
+  \def\studentnumbertitle{学\chinesespace\chinesespace\chinesespace\chinesespace 号}
 }
 
 \DeclareOption{doctor}{
@@ -471,6 +480,9 @@
   \def\TitlePageSpace{0.54in}
   \def\inserttheEngineeringFieldName{}
   \def\majorPitch{2.48in}
+  \def\authortitle{作者姓名}
+  \def\teachertitle{指导老师}
+  \def\studentnumbertitle{学\chinesespace\chinesespace 号}
 }
 
 \DeclareOption{engdoctor}{
@@ -490,6 +502,9 @@
     \cline{2-2}
   \end{tabular} \\}
   \def\majorPitch{2.0in}
+  \def\authortitle{作\hskip 0.66em 者\hskip 0.66em 姓\hskip 0.66em 名}
+  \def\teachertitle{指\hskip 0.66em 导\hskip 0.66em 老\hskip 0.66em 师}
+  \def\studentnumbertitle{学\chinesespace\chinesespace\chinesespace\chinesespace 号}
 }
 
 \ExecuteOptions{master}
@@ -647,11 +662,11 @@
       p{3.77in}p{20pt}}
     \majortitle & \zh@themajor &\\
     \cline{2-2}
-    学\chinesespace\chinesespace 号 & \thestudentnumber & \\
+    \studentnumbertitle & \thestudentnumber & \\
     \cline{2-2}
-    作者姓名 & \zh@theauthor &\\
+    \authortitle & \zh@theauthor &\\
     \cline{2-2}
-    指导老师 & \zh@theadvisor &\\
+    \teachertitle & \zh@theadvisor &\\
     \cline{2-2}
   \end{tabular}
 \end{center}
