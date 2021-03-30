@@ -11,6 +11,9 @@
 *.xdv
 *.synctex.gz
 *.lot
+*.TTF
+*.bat
+
 !./example.pdf
 
 .DS_Store
