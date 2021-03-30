@@ -421,8 +421,13 @@ FUNCTION {conference}
     {
         format.address write$ add.comma
     } if$
-    format.year write$ add.comma
-    format.pages write$
+    format.year write$ 
+    
+    pages missing$
+    {} {
+      add.comma
+      format.pages write$
+    } if$
     newline$
 }
 
@@ -442,17 +447,23 @@ FUNCTION {article}
     format.authors write$ add.period
     format.title "[J]" * write$ add.period
     format.journal write$ add.comma
-    format.year write$ add.comma
+    format.year write$ 
     
-    number missing$
-    {
-        volume ": " * write$
-    } {
-        volume "(" *
-        number *
-        "): " * write$
+    pages missing$
+    {} {
+      add.comma
+      number missing$
+      {
+          volume ": " * write$
+      } {
+          volume "(" *
+          number *
+          "): " * write$
+      } if$
+      format.pages write$
     } if$
-    format.pages write$
+
+    
     newline$
 }
 
@@ -467,8 +478,12 @@ FUNCTION {thesis}
         format.address write$ ": " write$
     } if$
     format.institution write$ add.comma
-    format.year write$ add.comma
-    format.pages write$
+    format.year write$ 
+    pages missing$
+    {} {
+      add.comma
+      format.pages write$
+    } if$
     newline$
 }
 
